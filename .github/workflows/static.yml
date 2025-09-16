@@ -1,43 +1,100 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>THE REWYND</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      width: 90%;
+      max-width: 400px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      /* placeholder background if no image */
+      background-color: #ddd;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2em;
+    }
+    .social-links, .music-links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .social-links li, .music-links li {
+      margin: 10px 0;
+    }
+    a.button {
+      display: block;
+      text-decoration: none;
+      color: white;
+      background-color: #1a73e8;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    a.button:hover {
+      background-color: #1558b0;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8em;
+      color: #777777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Profile / Title -->
+    <div class="profile">
+      <div class="profile-image">
+        <!-- You can put <img src="path_to_image.jpg" alt="The Rewynd"> here -->
+      </div>
+      <h1>THE REWYND</h1>
+    </div>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+    <!-- Social Media Links -->
+    <ul class="social-links">
+      <li><a class="button" href="https://www.facebook.com/therewynd" target="_blank">Facebook</a></li>
+      <li><a class="button" href="https://instagram.com/therewynd" target="_blank">Instagram</a></li>
+      <li><a class="button" href="https://x.com/therewynd" target="_blank">X</a></li>
+      <li><a class="button" href="mailto:therewynd@example.com">Email</a></li>
+      <li><a class="button" href="https://tiktok.com/@therewynd" target="_blank">TikTok</a></li>
+    </ul>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    <!-- Music Links -->
+    <h2>LISTEN : Overdrive</h2>
+    <ul class="music-links">
+      <li><a class="button" href="https://music.apple.com/album/overdrive/..." target="_blank">Apple Music</a></li>
+      <li><a class="button" href="https://open.spotify.com/track/..." target="_blank">Spotify</a></li>
+      <li><a class="button" href="https://music.amazon.in/..." target="_blank">Amazon Music</a></li>
+      <li><a class="button" href="https://youtube.com/..." target="_blank">YouTube</a></li>
+      <li><a class="button" href="https://tidal.com/..." target="_blank">TIDAL</a></li>
+      <li><a class="button" href="https://therewyndshop.example.com" target="_blank">SHOP</a></li>
+    </ul>
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    <!-- Footer -->
+    <div class="footer">
+      <a href="#">Cookie Preferences</a> · <a href="#">Report</a> · <a href="#">Privacy</a>
+    </div>
+  </div>
+</body>
+</html>
